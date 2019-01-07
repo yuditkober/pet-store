@@ -1,0 +1,14 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+
+<div class="pet-list">
+    <div *ngIf="pet === null">
+      loading ...
+    </div>
+    <div *ngIf="pet !== null">
+      <app-pet-card [pet]="pet"></app-pet-card>
+    </div>
+</div>

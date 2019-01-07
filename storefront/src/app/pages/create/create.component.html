@@ -1,0 +1,54 @@
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+</div>
+
+<div class="container">
+  <div [hidden]="submitted" class="create-form">
+    <!-- 
+    {{diagnostic}}
+    <p>Form values: {{ myForm.value.name | json }}</p>
+    <p>Form status: {{ myForm.status | json }}</p>
+    <p>dirty : {{ myForm.controls.name.dirty | json }}</p>
+    -->
+    <form class="pet-create" (ngSubmit)="onSubmit()" [formGroup]="myForm">
+      
+      <mat-form-field>
+          <input matInput 
+          class="form-control"
+          [formControl]="name"
+          required
+          placeholder="Pet Name">
+      </mat-form-field>
+      <div *ngIf="myForm.status === 'INVALID' && myForm.controls.name.touched && myForm.controls.name.dirty && myForm.value.name?.length < 3">
+          name is required and must be of length 3
+      </div>
+      
+      <mat-form-field>
+        <input matInput
+        class="form-control"
+        [formControl]="photoUrl"
+        required
+        placeholder="photoUrl">
+      </mat-form-field>
+      <div *ngIf="myForm.status === 'INVALID' && myForm.controls.name.touched && myForm.controls.name.dirty && myForm.value.photoUrl?.length < 3">
+        photoUrl is required and must be on imgur
+      </div>
+      
+      <mat-form-field>
+        <mat-select
+          class="form-control"
+          [formControl]="category"
+          placeholder="Category">
+          <mat-option *ngFor="let category of categories" [value]="category">{{category}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button class="btn btn-primary" type="submit" color="accent" [disabled]="!(myForm.status === 'VALID')">Submit</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <app-pet-card [pet]="proto"></app-pet-card>
+  </div>
+</div>

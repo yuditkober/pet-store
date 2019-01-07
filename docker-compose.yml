@@ -1,0 +1,13 @@
+version: '2.0'
+services:
+  petStoreBackend:
+    build: pet-services/
+    ports:
+      - "9999:9999"
+    image: pet-backend
+
+  petStoreFront:
+    build: storefront/
+    ports:
+      - "5000:80"
+    image: pet-front
