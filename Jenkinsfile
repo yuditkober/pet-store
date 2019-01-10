@@ -1,5 +1,5 @@
 pipeline {
-    agent node
+    agent buildSlave
     stages {
         stage('build images of front and backend') {
             steps {
