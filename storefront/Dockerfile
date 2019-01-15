@@ -7,3 +7,7 @@ RUN ["npm","run", "build"]
 FROM nginx:alpine
 COPY nginx.conf /etc/ngnix/conf.d/default.conf
 COPY --from=builder /pet-store-front/dist /usr/share/nginx/html
+
+
+
+
