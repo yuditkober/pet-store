@@ -1,19 +1,14 @@
-version: '2'
+version: '2.0'
+
 services:
-    jenkins:
-        container_name: jenkins
-        user: root
-        image: jenkins/jenkins:lts
-        working_dir: /var/www
-        ports:
-            - "10010:5000"
-            - "10011:8080"
-        volumes:
-            - /home/develeap/Desktop/volumes/jenkins_home:/var/jenkins_home
-    slave:
-      container_name: jenkins_slave
-      image: evarga/jenkins-slave
-      volumes:
-            - /home/develeap/Desktop/volumes/jenkins_home:/var/jenkins_home
-            - /home/develeap/Desktop/volumes/docker:/var/run/docker.sock
-  
+  petStoreBackend:
+    build: pet-services/
+    ports:
+      - "9999:9999"
+    image: pet-backend
+
+  petStoreFront:
+    build: storefront/
+    ports:
+      - "5000:80"
+    image: pet-front
