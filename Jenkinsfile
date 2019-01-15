@@ -1,15 +1,6 @@
 pipeline {
     agent { label build }
     stages {
-        stage('build backend') {
-            steps {
-               script {
-                sh './build.sh'
-                dir ("pet-store-service")
-                    sh 'mvn clean install'
-                }
-               }
-        }
         stage('build front') {
             steps {
              script {
@@ -18,6 +9,15 @@ pipeline {
                 sh 'npm run build'
              }
             }    
+        }
+        stage('build backend') {
+          steps {
+            script {
+                sh './build.sh'
+                dir ("pet-store-service")
+                    sh 'mvn clean install'
+                }
+               }
         }
         }   
 }
