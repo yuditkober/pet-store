@@ -9,7 +9,6 @@ pipeline {
                     sh 'mvn clean install'
                 }
                }
-            }
         }
         stage('build front') {
             steps {
@@ -17,8 +16,8 @@ pipeline {
                 dir ("pet-store-front")
                 sh 'yarn install'
                 sh 'npm run build'
-            }
-          }    
+             }
+            }    
+        }
         }   
-  }
 }
