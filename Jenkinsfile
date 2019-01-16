@@ -3,10 +3,8 @@ pipeline {
     stages {
         stage('build backend') {
             steps {
-               script {
                 sh "echo '*************************'"
                 }
-               }
         }
         }   
 }
