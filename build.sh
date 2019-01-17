@@ -1,7 +1,7 @@
 #install node
  sudo apt-get install nodejs npm
 
-# install angular/cli
+# install @angular/cli
  sudo npm install -g @angular/cli
 
 #install maven
