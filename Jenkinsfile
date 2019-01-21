@@ -1,11 +1,13 @@
 pipeline {
     agent { label 'slave_1'}
     stages {
-    
+
         stage('build front') {
             steps {
              script {
-               sh "echo '******'"
+               dir ("/storefront")
+               sh 'docker build -t front'
+               sh 'docker run -p 8085:8080 '
              }
             }    
         }
