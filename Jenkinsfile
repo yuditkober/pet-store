@@ -5,8 +5,8 @@ pipeline {
             steps {
              script {
                sh "echo '******'"
-             }
-            }    
+            }
+           }
         }
 
      }
