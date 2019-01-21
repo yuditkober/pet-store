@@ -7,10 +7,10 @@ pipeline {
              script {
                dir ("/storefront")
                sh 'docker build -t front'
-               sh 'docker run -p 8085:8080 '
+               sh 'docker run -p 8085:8080 front'
              }
             }    
         }
 
      }
-}   
+}
