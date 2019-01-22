@@ -4,7 +4,7 @@ pipeline {
         stage('build front') {
             steps {
              script {
-               sh "echo '******'"
+               sh "echo '********'"
             }
            }
         }
