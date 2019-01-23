@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'build'}
+    agent { label 'build'
     stages {
         stage('build pet-store') {
             dockerfile {
@@ -8,4 +8,5 @@ pipeline {
             }
         }
     }
+}
 }
