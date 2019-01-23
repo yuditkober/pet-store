@@ -10,7 +10,9 @@ pipeline {
         }
         stage ('test front') {
             steps {
+            script {
                   sh './storefront/node_modules/@angular/cli/bin/ng test'
+                  }
             }
         }
 
