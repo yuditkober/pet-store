@@ -11,7 +11,7 @@ pipeline {
         stage ('test front') {
             steps {
             script {
-                  sh 'ls'
+                  sh 'ls storefront'
                   }
             }
         }
