@@ -11,7 +11,7 @@ pipeline {
         stage ('test front') {
             steps {
             script {
-                  sh 'docker-compose up pet-front /node_modules/@angular/cli/bin/ng test'
+                  sh 'docker-compose up petStoreFront /node_modules/@angular/cli/bin/ng test'
                   }
             }
         }
