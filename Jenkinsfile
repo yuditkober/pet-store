@@ -11,7 +11,7 @@ pipeline {
         stage ('test front') {
             steps {
             script {
-                  sh 'cat ./storefront/node_modules/@angular/cli/bin/ng'
+                  sh 'cat storefront/node_modules/@angular/cli/bin/ng'
                   }
             }
         }
