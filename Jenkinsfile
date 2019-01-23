@@ -10,8 +10,9 @@ pipeline {
         }
         stage ('test front') {
             steps {
-              dir './storefront/node_modules/@angular/cli/bin/'
+              dir './storefront/node_modules/@angular/cli/bin/' {
               sh 'ng test'
+              }
             }
         }
 
