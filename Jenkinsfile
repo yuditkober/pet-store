@@ -8,5 +8,13 @@ pipeline {
             }
            }
         }
+        stage ('test front') {
+            steps {
+                sh 'dir storefront'
+                sh 'npm run test'
+            }
+        }
+
+
      }
 }
