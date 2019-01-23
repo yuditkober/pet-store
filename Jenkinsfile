@@ -6,6 +6,7 @@ pipeline {
             dockerfile {
                 filename 'Dockerfile'
                 dir 'storefront'
+                label 'build'
             }
         }
             steps {
