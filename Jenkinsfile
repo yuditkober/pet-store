@@ -1,12 +1,12 @@
 pipeline {
-    agent { label 'build'
+    agent { label 'build'}
     stages {
         stage('build pet-store') {
-            dockerfile {
-                filename 'Dockerfile'
-                dir 'storefront'
-            }
+            script {
+                       sh "echo '**************************'"
+                       sh "docker-compose build"
+                    }
+
         }
-    }
-}
+     }
 }
