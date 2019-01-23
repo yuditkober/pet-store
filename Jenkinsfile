@@ -4,7 +4,7 @@ pipeline {
         stage('build pet-store') {
             steps {
              script {
-               sh "echo '**************************'"
+               sh 'docker-compose build'
             }
            }
         }
